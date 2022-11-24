@@ -4,4 +4,16 @@
 		<login>Roman</login>
 		<password>1234</password>
 	</user>
+	<user>
+		<login>Vitalik</login>
+		<password>qwer</password>
+	</user>
+	<user>
+		<login>Levko</login>
+		<password>zxcv</password>
+	</user>
+	<user>
+		<login>Ivan</login>
+		<password>vanya</password>
+	</user>
 </users>

@@ -33,25 +33,34 @@ namespace Planer
         {
             XmlDocument document = new XmlDocument();
                 document.Load("../../XMLFile1.xml");
-            XmlNode myNode = document.SelectSingleNode("//password");
-            string password = myNode.InnerText;
-            if (document != null && passwordBox1.Password == password)
+            XmlNodeList userNames = document.SelectNodes("//login");
+
+            foreach (XmlNode userName in userNames)
             {
-                CalendarPlaner mainWindow = new CalendarPlaner();
-                this.Close();
+                if (document != null && usernameTextBlock.Text == userName.InnerText)
+                {
+                    if (passwordTextBlock.Password.ToString() == userName.NextSibling.InnerText)
+                    {
+                        CalendarPlaner mainWindow = new CalendarPlaner();
+                        Close();
+                        mainWindow.Show();
+                    }
+                    else
+                    {
+                        MainWindow mainWindow = new MainWindow();
+                        Close();
+                        mainWindow.Show();
+                    }
+                }
+            }
+
+            if (passwordTextBlock.Password.Length <= 1)
+            {
+                MainWindow mainWindow = new MainWindow();
+                this.Close(); 
                 mainWindow.Show();
             }
             
-
-            if (passwordBox1.Password.Length <= 1)
-            {
-                this.Close(); 
-            }
-            
-        }
-        private void buttonRegister_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
         }
     }
 }
