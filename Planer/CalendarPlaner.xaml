@@ -7,11 +7,48 @@
         mc:Ignorable="d"
         Title="CalendarPlaner" Height="450" Width="800">
     <Grid>
-        <Calendar HorizontalAlignment="Left" Margin="48,0,0,0" Name="calendar" VerticalAlignment="Center"/>
+        <Calendar HorizontalAlignment="Left" Margin="48,0,0,0" Name="calendar" 
+                  VerticalAlignment="Center" SelectionMode="MultipleRange" SelectedDatesChanged="selected_date_changes" 
+                  Cursor="Arrow" FontSize="16" FontFamily="Consolas" Height="161" Foreground="#FF736D6D">
+            <Calendar.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA3AEB9"/>
+                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                    <GradientStop Color="#FF718597" Offset="0.375"/>
+                    <GradientStop Color="#FFCDDBE6" Offset="1"/>
+                </LinearGradientBrush>
+            </Calendar.BorderBrush>
+            <Calendar.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE4EAF0"/>
+                    <GradientStop Color="#FFECF0F4" Offset="0.16"/>
+                    <GradientStop Color="#FFFCFCFD" Offset="0.16"/>
+                    <GradientStop Color="#FFBF8282" Offset="1"/>
+                </LinearGradientBrush>
+            </Calendar.Background>
+        </Calendar>
         <Button Content="Back" HorizontalAlignment="Left" Margin="558,91,0,0" VerticalAlignment="Top" Height="72" Width="155" Click="Button_Click"/>
-        <Button Content="Add new &#xD;&#xA;" HorizontalAlignment="Left" Margin="558,193,0,0" VerticalAlignment="Top" Height="72" Width="155"/>
-        <Button Content="Monthly view" HorizontalAlignment="Left" Margin="22,66,0,0" VerticalAlignment="Top" Height="41" Width="97" Click="Button_Click_1"/>
-        <Button Content="Default view" HorizontalAlignment="Left" Margin="160,66,0,0" VerticalAlignment="Top" Height="41" Width="97" Click="Button_Click_2"/>
+        <Button Content="Add new &#xD;&#xA;" HorizontalAlignment="Left" Margin="558,193,0,0" VerticalAlignment="Top" Height="51" Width="155" Click="Button_Click_3"/>
+        <Button Content="Default view" HorizontalAlignment="Left" Margin="22,66,0,0" VerticalAlignment="Top" Height="41" Width="97" Click="Button_Click_1"/>
+        <Button Content="Monthly view" HorizontalAlignment="Left" Margin="160,66,0,0" VerticalAlignment="Top" Height="41" Width="97" Click="Button_Click_2"/>
+        <RichTextBox Margin="558,343,36,-32" x:Name="planTextRTB">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text=""/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <TextBox x:Name="SelectedDateTextBox" HorizontalAlignment="Left" Margin="300,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176"/>
+        <Button Content="Delete&#xA;" HorizontalAlignment="Left" Margin="558,259,0,0" VerticalAlignment="Top" Height="51" Width="155"/>
+        <RichTextBox Margin="558,342,36,-32" x:Name="myPLansRTB">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text=""/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <TextBox x:Name="planText" HorizontalAlignment="Left" Margin="299,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" Height="122"/>
+        <TextBox x:Name="myPLans" HorizontalAlignment="Left" Margin="300,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" Height="122"/>
 
     </Grid>
 </Window>

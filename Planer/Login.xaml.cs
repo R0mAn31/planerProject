@@ -33,7 +33,7 @@ namespace Planer
         {
             XmlDocument document = new XmlDocument();
                 document.Load("../../XMLFile1.xml");
-            XmlNode myNode = document.SelectSingleNode("users/user/password");
+            XmlNode myNode = document.SelectSingleNode("//password");
             string password = myNode.InnerText;
             if (document != null && passwordBox1.Password == password)
             {
